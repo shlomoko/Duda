@@ -1,0 +1,19 @@
+<div class="main" *ngIf="!editMode">
+    <div class="icons">
+        <button class="edit" (click)="editReview()">Edit</button>
+        <button class="delete" (click)="deleteReview()">Delete</button>
+    <div class="wrapper">
+        </div>
+            <img class="image">
+        <div>
+            <div class="name"> {{ review.name }}</div>
+            <div class="comment">{{ review.content }}</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="editMode">
+    <input class="name" [(ngModel)]="review.name" placeholder="name"/>
+    <input [(ngModel)]="review.content" type="text" class="comment"/>
+    <div class="btn add" (click)=saveReview()>Save</div>
+</div>

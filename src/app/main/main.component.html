@@ -1,0 +1,11 @@
+<div class="main">
+    <h1 class="title">User Review</h1>
+    <div class="reviews" *ngFor="let review of reviews">
+        <app-review [review]="review"></app-review>
+    </div>
+    <div class="new_review">
+        <input class="name" [(ngModel)]="newReview.name" placeholder="name"/>
+        <textarea [(ngModel)]="newReview.content" class="comment"></textarea>
+        <button class="btn" (click)=addReview()>Add</button>
+    </div>
+</div>
